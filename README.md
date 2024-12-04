@@ -121,9 +121,56 @@ Agora, a parte divertida! É hora de começar a aprender SQL e como usá-lo para
 Declarações de banco de dados
 
 ### **CRIAR BANCO DE DADOS**
-Se um novo banco de dados for necessário, o primeiro passo que você daria seria criá-lo. Isso pode ser feito em SQL usando a **`CREATE DATABASE`** instrução. Isso seria feito usando a seguinte sintaxe:
+Se um novo banco de dados for necessário, o primeiro passo que você daria seria criá-lo. Isso pode ser feito em SQL usando a **`CREATE DATABASE`**. Isso seria feito usando a seguinte sintaxe:
+
+![image](https://github.com/user-attachments/assets/fe13b1ec-85d5-4850-bcfe-7429b91b0664)
+
+**Explicação Bonus** : `CREATE DATABASE` Diz ao MySQL que queremoscriar um novo banco de dados. e `database_name` É o nome que vamos dar ao novo banco de dados. Poderemos escolher qualquer nome, desde que seja único no servidor.
+
+Execute o seguinte comando para criar um banco de dados chamado `thm_bookmarket_db`:
+
+![image](https://github.com/user-attachments/assets/fc309d9d-f39e-4104-b2f0-e071543522eb)
+
+Explicação bonus: `CREATE DATABASE`: Esse é o comando que diz ao MySQL que queremos criar um novo banco de dados. É como reservar um espaço onde você vai armazenar várias tabelas que contêm os dados organizados de um sistema. `thm_bookmarket_db`: Esse é o nome do banco de dados em que estamos criando. Neste caso, o nome é `thm_bookmarket_db`, que indica ser um banco de dados para um sistema chamado "**bookmarket**" ( para gerenciar livros). 
 
 
+### MOSTRAR BANCOS DE DADOS
+
+Agora que criamos um banco de dados, podemos visualizá-lo usando a instrução `SHOW DATABASES`. A instrução `SHOW DATABASES` retornará uma lista de bancos de dados presentes. Execute a instrução da seguinte forma:
+
+![image](https://github.com/user-attachments/assets/662b9937-66e6-4440-bad1-7d7fd0bfe615)
+
+**Explicação Bonus** : `SHOW DATABASES;` Esse comando exibe uma lista de todos os bancos de dados disponíveis no servidor MySQL ao qual você está conectado.
+No resultado, você vê uma lista de bancos de dados. Aqui está uma breve explicação sobre cada um deles:
+* `THM{...}`: Está relacionado a uma atividade que estamos fazendo, mais a frente usaremos ela. 
+* `database_name:` É um banco de dados que acabamos de criar.
+* `information_schema`: Um banco de dados do sistema, que contém informações sobre todos os outros bancos de dados. Ele é útil para visualizar a estrutura dos bancos de dados, como tabelas, colunas, etc.
+* `mysql`: Outro banco de dados do sistema, onde são armazenadas informações de configuração do próprio MySQL, como usuários e também permissões.
+* `performance_schema`: Banco de dados que contém informações sobre o desempenho do servidor MySQL, é útil para otimização e monitoramento.
+* `sys`: Um banco de dados que contém visões úteis para simplificar o diagnóstico e monitoramento do sistema MySQL.
+* `task_4_db`: Banco de dados criado em uma tarefa específica que iremos fazer mais a frente.
+* `thm_bookmarket_db`: Esse é o banco de dados que criamos para armazenar informações relacionadas ao "**bookmarket**".
+* `thm_books`: Outro banco de dados, relacionado a livros, criado para uma tarefa específica iremos usá-lo mais adiante.
+* `thm_books2`: Iremos usá-lo em uma tarefa
+* `tools_db`: Um banco de dados relacionado a ferramentas.
+
+### USAR BANCO DE DADOS
+Depois que um banco de dados é criado, você pode querer interagir com ele. Antes de podermos interagir com ele, precisamos dizer ao mysql com qual banco de dados gostaríamos de interagir (para que ele saiba em qual banco de dados executar consultas subsequentes). Para definir o banco de dados que acabamos de criar como o banco de dados ativo, executaríamos a USEinstrução da seguinte forma (certifique-se de executar isso em sua máquina):
+
+
+![image](https://github.com/user-attachments/assets/5e06efa5-9578-4f53-b38b-5c2739b51746)
+
+
+**Explicação Bonus** : `USE` esse comando é usado para selecionar qual banco de dados queremos usar no momento. Ele indica ao MySQL que, a partir de agora todas as operações que executarmos ( sendo como criar tabelas, inserir dados, etc.) serão feitas no banco de dados que especificarmos. `thm_bookmarket_db` é o nome do banco de dados em que  estamos selecionando. Neste caso, é o banco que criamos anteriormente para armazenar informações do "**bookmarket**".
+O `Database changed` é a mensagem que confirma que o banco de dados ativo agora é o `thm_bookmarket_db`. Ou seja, qualquer comando que digitarmos a partir deste ponto vai interagir com esse banco de dados.
+
+
+
+### DROP DATABASE
+Uma vez que um banco de dados não é mais necessário (talvez tenha sido criado para fins de teste, ou não seja mais necessário), ele pode ser removido usando a DROPinstrução. Para remover um banco de dados, usaríamos a seguinte sintaxe de instrução (embora, no nosso caso, queiramos manter nosso banco de dados, então não há necessidade de executar este você mesmo!):
+![image](https://github.com/user-attachments/assets/3e761981-7691-4d33-a9eb-3704e7e8d9b1)
+
+Explicação Bonus: `DROP DATABASE` É um comando usado para deletar um banco de dados. Isso significa que todos os dados, tabelas e estruturas armazenadas no banco de dados serão removidos permanentemente. `database_name` É banco que desejamos excluir. No exemplo mostrado no print, estamos deletando o banco de dados chamado database_name.
 
 
 
