@@ -173,5 +173,54 @@ Uma vez que um banco de dados não é mais necessário (talvez tenha sido criado
 Explicação Bonus: `DROP DATABASE` É um comando usado para deletar um banco de dados. Isso significa que todos os dados, tabelas e estruturas armazenadas no banco de dados serão removidos permanentemente. `database_name` É banco que desejamos excluir. No exemplo mostrado no print, estamos deletando o banco de dados chamado database_name.
 
 
+## Declarações de tabela
+
+Agora que você pode criar, listar, usar e remover bancos de dados, é hora de examinar como preencheríamos esses bancos de dados com tabelas e interagiríamos com elas. 
+
+### CRIAR TABELA
+
+Seguindo a lógica das instruções do banco de dados, criar tabelas também usa uma CREATEinstrução. Uma vez que um banco de dados esteja ativo (você tenha executado a USEinstrução nele), uma tabela pode ser criada dentro dele usando a seguinte sintaxe de instrução:
+
+`mysql> CREATE TABLE example_table_name (
+    example_column1 data_type,
+    example_column2 data_type,
+    example_column3 data_type
+);
+`
+
+Como você pode ver, há um pouco mais envolvido aqui. Na tarefa Databases 101, abordamos como e quando uma tabela é criada; deve ser decidido quais colunas formarão um registro nessa tabela, bem como qual tipo de dado deve estar contido nessa coluna. É isso que é representado por essa sintaxe aqui. No exemplo, há 3 colunas de exemplo, mas o SQL suporta muitas (mais de 1000). Vamos tentar preencher nossa thm_bookmarket_dbtabela usando a seguinte instrução:
+
+![image](https://github.com/user-attachments/assets/9a5d5882-ab37-4e88-8f8f-5129d91578ad)
+
+Esta declaração criará uma tabela book_inventorycom três colunas:  book_id, book_namee publication_date. book_idé um INT(Integer) como ele deve ser sempre apenas um número, AUTO_INCREMENTestá presente, significando que o primeiro livro inserido receberia book_id 1, o segundo livro inserido receberia book_id 2, e assim por diante. Finalmente,  book_idé definido como o PRIMARY KEYcomo será a maneira como identificaremos exclusivamente um registro de livro em nossa tabela (e um primário deve estar presente em uma tabela). 
+Book_name tem o tipo de dado VARCHAR(255), o que significa que pode ter caracteres variáveis ​​(texto/números/pontuação) e um limite de 255 caracteres é definido e NOT NULL, o que significa que não pode estar vazio (então se alguém tentasse inserir um registro nesta tabela, mas o book_name estivesse vazio, ele seria rejeitado). Publication_date é definido como o tipo de dado DATE.
+
+### MOSTRAR TABELAS
+
+Assim como podemos listar bancos de dados usando uma instrução SHOW, também podemos listar as tabelas em nosso banco de dados ativo no momento (o banco de dados no qual usamos a instrução USE pela última vez). Execute o comando a seguir e você deverá ver a tabela que acabou de criar:
+
+![image](https://github.com/user-attachments/assets/4a1639f5-3adc-41db-81c2-ee60b03d19a8)
+
+### DESCREVER 
+Se quisermos saber quais colunas estão contidas em uma tabela (e seus tipos de dados), podemos descrevê-las usando o DESCRIBEcomando (que também pode ser abreviado para DESC). Descreva a tabela que você acabou de criar usando o seguinte comando:
+
+![image](https://github.com/user-attachments/assets/43d5ec73-e1ae-4797-926c-1f3a149e2796)
+
+### ALTERAR 
+Depois de criar uma tabela, pode chegar um momento em que sua necessidade pelo conjunto de dados muda, e você precisa alterar a tabela. Isso pode ser feito usando a ALTERinstrução. Vamos agora imaginar que decidimos que realmente queremos ter uma coluna em nosso inventário de livros que tenha a contagem de páginas de cada livro. Adicione isso à nossa tabela usando a seguinte instrução:
+
+![image](https://github.com/user-attachments/assets/88d7e568-22e2-46ce-a9e1-593b084c20e9)
+
+A instrução ALTER pode ser usada para fazer alterações em uma tabela, como renomear colunas, alterar o tipo de dados em uma coluna ou remover uma coluna. 
+
+
+### DERRUBAR 
+Semelhante à remoção de um banco de dados, você também pode remover tabelas usando a instrução DROP. Não precisamos fazer isso, mas a sintaxe que você usaria para isso é:
+
+`DROP TABLE table_name;`
+
+### Respostas das perguntas
+![image](https://github.com/user-attachments/assets/e7248d2a-25cb-4ce2-8164-5f0841844d72)
+![image](https://github.com/user-attachments/assets/950e031b-0610-4a25-9e9b-bf3717bb1ffa)
 
 
