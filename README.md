@@ -495,4 +495,104 @@ A consulta acima retorna livros que foram publicados em ou após 2 de novembro d
 ![image](https://github.com/user-attachments/assets/10f7b9be-0726-48ec-8b94-df4a2337e79c)
 
 
+## Tarefa 8
+## Funções
+Ao trabalhar com Dados, funções podem nos ajudar a simplificar consultas e operações e manipular dados. Vamos explorar algumas dessas funções a seguir.
+
+### Funções de String
+
+Funções de strings realizam operações em uma string, retornando um valor associado a ela.
+
+### Função CONCAT()
+
+Esta função é usada para adicionar duas ou mais strings juntas. É útil para combinar texto de colunas diferentes.
+
+![image](https://github.com/user-attachments/assets/bda8af76-0ab8-43fc-96eb-345774f81b01)
+
+Esta consulta concatena as colunas de nome e categoria da tabela books em uma única chamada book_info .
+
+### Função GROUP_CONCAT()
+
+Esta função pode nos ajudar a concatenar dados de várias linhas em um campo. Vamos explorar um exemplo de seu uso.
+
+![image](https://github.com/user-attachments/assets/82bf9234-6a46-42d5-8e89-076c195a15ca)
+
+A consulta acima agrupa os livros por categoria e concatena os títulos dos livros dentro de cada categoria em uma única string .
+
+### Função SUBSTRING()
+
+Esta função recuperará uma substring de uma string dentro de uma consulta, começando em uma posição determinada. O comprimento desta substring também pode ser especificado.
+
+![image](https://github.com/user-attachments/assets/548eb28b-8e2b-45a5-a864-33385d41ebcf)
+
+Na consulta acima, podemos observar como ela extrai os quatro primeiros caracteres da coluna published_date e os armazena na  coluna published_year .
+
+### Função LENGTH()
+
+Esta função retorna o número de caracteres em uma string. Isso inclui espaços e pontuação. Podemos encontrar um exemplo abaixo.
+
+![image](https://github.com/user-attachments/assets/9282e795-51a1-48b5-aff3-a06ef8791ecb)
+
+Como podemos observar acima, a consulta calcula o comprimento da string dentro da coluna name e o armazena em uma coluna chamada  name_length .
+
+### Funções Agregadas
+
+Essas funções agregam o valor de várias linhas dentro de um critério especificado na consulta; elas podem combinar vários valores em um resultado.
+
+### Função COUNT()
+
+Esta função retorna o número de registros dentro de uma expressão, como mostra o exemplo abaixo.
+
+![image](https://github.com/user-attachments/assets/6e7b915a-b81d-41c6-bdf8-97a2b0978d06)
+
+Esta consulta acima conta o número total de linhas na tabela books . O resultado é  5 , pois há cinco books na tabela books e ele é armazenado na coluna total_books .
+
+### Função SUM()
+
+Esta função soma todos os valores (não NULL) de uma coluna determinada.
+
+Nota: Não há necessidade de executar esta consulta. Isto é apenas para fins de exemplo.
+
+![image](https://github.com/user-attachments/assets/064dde9e-751c-473f-81c5-b55e663374c1)
+
+A consulta acima calcula a soma total da coluna price . O resultado fornece o preço agregado de todos os livros na coluna total_price .
+
+### Função MAX()
+
+Esta função calcula o valor máximo dentro de uma coluna fornecida em uma expressão.
+
+![image](https://github.com/user-attachments/assets/fe4383f0-9601-4246-824c-eb4f7f21b728)
+
+A consulta acima recupera a data da publicação mais recente (valor máximo) da tabela books . O resultado 2021-12-21 é armazenado na coluna latest_book .
+
+### Função MIN()
+
+Esta função calcula o valor mínimo dentro de uma coluna fornecida em uma expressão.
+
+![image](https://github.com/user-attachments/assets/040c2f45-75e7-4136-9050-629090550bae)
+
+A consulta acima recupera a data de publicação mais antiga (valor mínimo) da tabela books . O resultado 2014-10-14 é armazenado na coluna earlier_book .
+
+
+![image](https://github.com/user-attachments/assets/8f173158-d576-4458-975d-6e8b9f69a3c6)
+* SELECT name: Seleciona a coluna name, que contém o nome da ferramenta.
+* FROM hacking_tools: Especifica a tabela hacking_tools.
+* ORDER BY LENGTH(name) DESC: Ordena os resultados com base no comprimento (LENGTH()) dos nomes, em ordem decrescente (DESC), ou seja, do maior para o menor.
+* LIMIT 1: Retorna apenas o primeiro resultado da lista ordenada, que será o nome mais longo.
+![image](https://github.com/user-attachments/assets/d66dd7d9-d43a-43b6-8e7f-199a1523c9dc)
+
+---------------------------------------
+
+![image](https://github.com/user-attachments/assets/d5c7cb3b-6e26-41ef-85b0-123792afdc5d)
+* SELECT SUM(amount): Usa a função SUM() para calcular a soma de todos os valores na coluna amount.
+* FROM hacking_tools: Especifica a tabela hacking_tools.
+![image](https://github.com/user-attachments/assets/dd6545fa-855f-476b-812c-a963fb56972f)
+
+-------------------------------------------
+![image](https://github.com/user-attachments/assets/603eec10-3041-4b97-a52c-bd6a6fba71b5)
+* SELECT GROUP_CONCAT(name SEPARATOR ' & '): Usa a função GROUP_CONCAT() para concatenar os nomes das ferramentas (name), separados por &.
+* AS tools_names: Nomeia o resultado como tools_names.
+* FROM hacking_tools: Especifica a tabela hacking_tools.
+* WHERE amount NOT LIKE '%0': Filtra as ferramentas cujo valor (amount) não termina em "0". O símbolo % representa qualquer sequência de caracteres, e o 0 indica que estamos buscando valores que não terminam em "0".
+![image](https://github.com/user-attachments/assets/b0aa6742-6d04-42dd-8da6-4ed37f573be4)
 
