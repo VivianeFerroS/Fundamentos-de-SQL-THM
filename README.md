@@ -223,4 +223,276 @@ Semelhante à remoção de um banco de dados, você também pode remover tabelas
 ![image](https://github.com/user-attachments/assets/e7248d2a-25cb-4ce2-8164-5f0841844d72)
 ![image](https://github.com/user-attachments/assets/950e031b-0610-4a25-9e9b-bf3717bb1ffa)
 
+-------------------------------------------------
+![image](https://github.com/user-attachments/assets/5a1b7303-dd92-46c1-a5ba-44c447b82be5)
+* Comecei listando todos os bancos de dados disponíveis no servidor MySQL com o comando:
+
+![image](https://github.com/user-attachments/assets/da2485dd-28aa-4ce2-a7b0-1ab85573188d)
+
+* Em seguida, selecionei o banco de dados `task_4_db` para trabalhar com ele, usando o comando:
+  
+![image](https://github.com/user-attachments/assets/59153521-928d-4ff6-ba42-818bdec45f83)
+
+* Para encontrar a resposta da nossa pergunta, precisei ver quais tabelas estavam disponíveis no banco de dados ativo, então usou o comando:
+
+![image](https://github.com/user-attachments/assets/921c8206-88c3-4876-96c2-bf9df2caf668)
+
+## Tarefa 5
+
+## Operações CRUD
+
+### CRUD
+CRUD significa ( Create, Read, Update, Delete)  Criar , Ler , Atualizar e Excluir , que são consideradas as operações básicas em qualquer sistema que gerencia dados.
+
+Vamos explorar todas essas operações diferentes ao trabalhar com MySQL .  Nas próximas duas tarefas, usaremos a tabela books que faz parte do banco de dados `thm_books` . Podemos acessá-la com a instrução `use thm_books`;.
+
+### Criar Operação (INSERT)
+A operação Create criará novos registros em uma tabela. No MySQL, isso pode ser feito usando a instrução `INSERT INTO`, conforme mostrado abaixo.
+
+![image](https://github.com/user-attachments/assets/9ca99a14-fe8e-4499-90bc-74c05e516ed7)
+
+Como podemos observar, a declaração `INSERT INTO`  especifica uma tabela, neste caso,  books , onde você pode adicionar um novo registro; as colunas id , name , published_date e description são os registros na tabela. Neste exemplo, um novo registro com um id de  1 , um nome de "Android Security Internals ", um published_date de " 2014-10-14 " e uma descrição afirmando " Android Security Internals provides a complete understanding of the security internals of Android devices " foi adicionado.
+
+
+Observação: esta operação já existe no banco de dados, portanto não há necessidade de executar a consulta.
+
+### Operação de leitura (SELECT)
+A operação **Read** , como o nome sugere, é usada para ler ou recuperar informações de uma tabela. Podemos buscar uma coluna ou todas as colunas de uma tabela com a instrução `SELECT`, como mostrado no próximo exemplo.
+
+![image](https://github.com/user-attachments/assets/07c57b6e-9b52-4321-963a-96e47a372a5b)
+
+A `SELECT` de saída acima é seguida por um *símbolo indicando que todas as colunas devem ser recuperadas, seguido pela FROMcláusula e pelo nome da tabela, neste caso,  books .
+
+Se quisermos selecionar uma coluna específica, como o nome e a descrição , devemos especificá-los em vez do *símbolo, conforme mostrado abaixo.
+
+![image](https://github.com/user-attachments/assets/0194876c-24dd-4675-95fa-4da3090d8f85)
+
+### Operação de atualização (UPDATE)
+A operação Update modifica um registro existente dentro de uma tabela, e a mesma instrução, UPDATE, pode ser usada para isso.
+
+![image](https://github.com/user-attachments/assets/799f7e6d-1257-4c23-8513-d7698faa4c65)
+
+A UPDATE declaração especifica a tabela, neste caso,  books , e então podemos usar SETseguido pelo nome da coluna que iremos atualizar. A WHEREcláusula especifica qual linha atualizar quando a cláusula for atendida, neste caso, aquela com id 1 .
+
+### Operação de exclusão (DELETE)
+A operação delete remove registros de uma tabela. Podemos fazer isso com a DELETE instrução.
+
+Nota: Não há necessidade de executar a consulta. Excluir esta entrada afetará o restante dos exemplos nas próximas tarefas.
+
+![image](https://github.com/user-attachments/assets/c4e40d72-bfcb-4a23-ab1c-90f1691fea52)
+
+Acima, podemos observar a DELETEdeclaração seguida da FROMcláusula , que nos permite especificar a tabela onde o registro será removido, neste caso, books , seguida da WHEREcláusula que indica que deve ser aquela onde o id é 1 .
+
+### Resumo
+Em resumo, os resultados das operações `CRUD` são fundamentais para operações de dados e ao interagir com bancos de dados. As instruções associadas a eles estão listadas abaixo.
+
+* Criar (instrução `INSERT`) - Adiciona um novo registro à tabela.
+* Ler (instrução `SELECT`) - Recupera registro da tabela.
+* Atualizar (instrução `UPDATE`) - Modifica dados existentes na tabela.
+* Excluir (instrução `DELETE`) - Remove o registro da tabela.
+Essas operações nos permitem gerenciar e manipular dados de forma eficaz dentro de um banco de dados.
+
+---------------------------------------------
+![image](https://github.com/user-attachments/assets/31707395-4e5d-45d6-9aba-191c1063a1a0)
+
+* Primeiro, defini `tools_db` como o banco de dados ativo, usando o comando:
+`USE tools_db;`
+* Usei o comando `SELECT` para visualizar todas as informações da tabela **hacking_tools** no **banco tools_db** :
+`SELECT * FROM hacking_tools;`
+* Precisei identificar a ferramenta correta de acordo com a pergunta, analisando a tabela retornada, eu encontrei a ferramenta com a ID 3 chamada WI-FI Pineapple que tem a descrição correspondente com o dispositivo usado para MITM. Nossa resposta correta é Wi-Fi Pineapple.
+![image](https://github.com/user-attachments/assets/713aab73-5310-4b9d-acd8-a9147e367ff5)
+
+--------------------------------------------
+![image](https://github.com/user-attachments/assets/815647e4-e6fd-4acf-92b7-093c0de52817)
+![image](https://github.com/user-attachments/assets/fecaf8ff-768a-464d-a832-ab8f3774ce89)
+
+
+## Tarefa 6
+
+## Cláusulas
+
+Uma cláusula é uma parte de uma declaração que especifica os critérios dos dados que estão sendo manipulados, geralmente por uma declaração inicial. Cláusulas podem nos ajudar a definir o tipo de dados e como eles devem ser recuperados ou classificados. 
+
+Em tarefas anteriores, já usamos algumas cláusulas, como FROM essa, que é usada para especificar a tabela que estamos acessando com nossa instrução e WHERE, que especifica quais registros devem ser usados.
+
+Esta tarefa se concentrará em outras cláusulas: DISTINCT, GROUP BY, ORDER BY, e HAVING.
+
+### Cláusula DISTINCT
+A `DISTINCT` cláusula é usada para evitar registros duplicados ao fazer uma consulta, retornando apenas valores únicos.
+
+Vamos usar uma consulta `SELECT * FROM books` e observar os resultados abaixo.
+
+![image](https://github.com/user-attachments/assets/bab26a03-9bf6-469b-b0be-6be592c4e063)
+
+A saída da consulta exibe todo o conteúdo da tabela books , e o registro Ethical Hacking é exibido duas vezes. Vamos executar a consulta novamente, mas, dessa vez, usando a DISTINCTcláusula .
+
+![image](https://github.com/user-attachments/assets/61dccf28-ed89-4d5c-a20e-33f4591ed485)
+
+ saída mostra que apenas cinco linhas são retornadas e apenas uma instância do registro Ethical Hacking é exibida.
+
+### Cláusula GROUP BY
+A GROUP BYcláusula agrega dados de vários registros e agrupa os resultados da consulta em colunas. Isso pode ser útil para agregar funções.
+
+![image](https://github.com/user-attachments/assets/b3f365a1-111a-4fb4-8fe0-2be2b2783647)
+
+
+No exemplo acima, os registros na tabela book são reagrupados pelo resultado da COUNTfunção. Já sabemos que Ethical hacking é listado duas vezes, então a contagem total  é 2, colocada no final, pois é  agrupada  por contagem.
+
+### Cláusula ORDER BY
+A ORDER BYcláusula pode ser usada para classificar os registros retornados por uma consulta em ordem crescente ou decrescente. Usar funções como ASCe DESC pode nos ajudar a fazer isso, como mostrado abaixo nos próximos dois exemplos.
+
+ORDEM CRESCENTE
+![image](https://github.com/user-attachments/assets/2c193901-55f8-42fe-a3ed-124646ef2c7e)
+
+ORDEM DESCENDENTE
+![image](https://github.com/user-attachments/assets/30eaea72-d368-4003-a451-946c93ec998f)
+
+Podemos observar a diferença ao classificar em ordem crescente usando ASCe em ordem decrescente usando DESC, ambos usando a publised_date como referência.
+
+
+### Cláusula HAVING
+A HAVING cláusula é usada com outras cláusulas para filtrar grupos ou resultados de registros com base em uma condição. No caso de GROUP BY, ela avalia a condição para TRUE ou FALSE, diferentemente da WHEREcláusula HAVING filtra os resultados após a agregação ser realizada.
+
+![image](https://github.com/user-attachments/assets/ce5c2125-920a-41b2-bb31-6eb40fdd725e)
+
+No exemplo acima, podemos observar que a consulta retorna os livros com os nomes que contêm a palavra hack e a contagem adequada, como aprendemos antes.
+
+![image](https://github.com/user-attachments/assets/0a5e0828-3fbd-43c5-be28-b0e196d9484e)
+* `SELECT COUNT(DISTINCT category)` É o comando vai contar quantas categorias diferentes existem na coluna `category` da tabela
+* `FROM hacking_tools` Especifica a tabela da qual estamos obtendo as informações.
+![image](https://github.com/user-attachments/assets/e5aee822-68f4-41f5-8b81-3037f4eae2f8)
+
+-------------------------------------------------
+![image](https://github.com/user-attachments/assets/fbfb4807-a9bb-40eb-95d8-37a08ebbbef5)
+
+Vamos por partes:
+* `SELECT *`: Seleciona todas as colunas da tabela.
+* `FROM hacking_tools`: Especifica a tabela hacking_tools.
+* `ORDER BY name ASC`: Ordena os resultados pela coluna name em ordem crescente (ASC).
+* `LIMIT 1`: Retorna apenas o primeiro registro da lista ordenada.
+* 
+![image](https://github.com/user-attachments/assets/7aea9a86-c5a2-4c32-8952-c74f78e42916)
+
+----------------------------------------------------
+![image](https://github.com/user-attachments/assets/70c18964-616c-45f4-864e-7521dc4c22ee)
+* `ORDER BY name DESC`: Ordena os resultados pela coluna name em ordem decrescente (DESC).
+
+![image](https://github.com/user-attachments/assets/1547e1db-d7b7-4c90-a280-0c767cb4583d)
+
+
+## Tarefa 7
+
+## Operadores
+
+Ao trabalhar com SQL e lidar com lógica e comparações, os operadores são nossa maneira de filtrar e manipular dados de forma eficaz.  Entender esses operadores nos ajudará a criar consultas mais precisas e poderosas.  Nas próximas duas tarefas, usaremos a tabela books que faz parte do banco de dados thm_books2 . Podemos acessá-la com a instrução .  use thm_books2;
+
+### Operadores Lógicos
+Esses operadores testam a verdade de uma condição e retornam um valor booleano de TRUEor FALSE. Vamos explorar alguns desses operadores a seguir.
+
+### Operador LIKE
+O LIKEoperador é comumente usado em conjunto com cláusulas como WHEREpara filtrar padrões específicos dentro de uma coluna. Vamos continuar usando nosso DataBase para consultar um exemplo de seu uso.
+
+![image](https://github.com/user-attachments/assets/50e61886-b3f0-4242-b919-f692a57426a1)
+
+A consulta acima retorna uma lista de registros dos livros filtrados, mas aqueles que usam a WHEREcláusula que contém a palavra guia usando o LIKEoperador.
+
+### Operador AND
+O ANDoperador usa várias condições dentro de uma consulta e retorna TRUEse todas elas forem verdadeiras.
+
+![image](https://github.com/user-attachments/assets/d6936a4c-2f8d-4235-9ab6-b2236e5c97f1)
+
+A consulta acima retorna o livro com o nome Bug Bounty Bootcamp , que está na categoria de  Segurança Ofensiva .
+
+### Operador OR
+O ORoperador combina várias condições dentro de consultas e retorna TRUEse pelo menos uma dessas condições for verdadeira.
+
+![image](https://github.com/user-attachments/assets/5d273453-c726-4491-8c6c-c612bec41de3)
+
+A consulta acima retorna livros cujos nomes incluem Android  ou IOS .
+
+### Operador NOT
+O NOToperador inverte o valor de um operador booleano, permitindo-nos excluir uma condição específica.
+
+![image](https://github.com/user-attachments/assets/851b8b96-64c3-4491-a572-3e3dafad3963)
+
+A consulta acima retorna resultados onde a descrição não contém a palavra guia .
+
+### Operador BETWEEN
+O BETWEENoperador nos permite testar se um valor existe dentro de um intervalo definido .
+
+![image](https://github.com/user-attachments/assets/c1cbd983-8727-44ea-bf2a-f0a3497bdcb6)
+
+A consulta acima retorna livros cujo id está entre 2 e 4 .
+
+### Operadores de comparação
+Os operadores de comparação são usados ​​para comparar valores e verificar se eles atendem a critérios especificados.
+
+### Operador Igual a
+O = operador (Igual) compara duas expressões e determina se elas são iguais, ou pode verificar se um valor corresponde a outro em uma coluna específica.
+
+![image](https://github.com/user-attachments/assets/1d865aff-2a5b-4f0a-aa98-0307ed05e585)
+
+A consulta acima retorna o livro com o nome exato Designing Secure Software .
+
+### Não é igual ao operador
+O !=operador (não igual) compara expressões e testa se elas não são iguais; ele também verifica se um valor difere daquele dentro de uma coluna.
+
+![image](https://github.com/user-attachments/assets/0c65298c-6a73-466f-ab6a-03997f8ecb77)
+
+A consulta acima retorna livros, exceto aqueles cuja categoria é Segurança Ofensiva .
+
+### Operador menor que
+Operador menor que
+
+O < operador (menor que) compara se a expressão com um determinado valor é menor que o fornecido
+
+![image](https://github.com/user-attachments/assets/62feb6ef-4257-49c9-b815-45044968e024)
+
+A consulta acima retorna livros que foram publicados antes de 1º de janeiro de 2020 .
+
+### Operador Maior Que
+O >operador (maior que) compara se a expressão com um determinado valor é maior que o fornecido.
+
+![image](https://github.com/user-attachments/assets/b01aa476-381a-4257-a24c-c8be2b9d7d86)
+
+A consulta acima retorna livros publicados depois de 1º de janeiro de 2020 .
+
+### Operadores Menor ou Igual a e Maior   ou Igual a 
+O <=operador (Menor que ou igual) compara se a expressão com um valor dado é menor que ou igual ao fornecido. Por outro lado, o >= operador (Maior que ou Igual) compara se a expressão com um valor dado é maior que ou igual ao fornecido. Vamos observar alguns exemplos de ambos abaixo.
+
+![image](https://github.com/user-attachments/assets/ffb2a926-52bb-45e0-8c97-4d480e9e4f39)
+
+A consulta acima retorna livros publicados em ou antes de 15 de novembro de 2021 .
+
+
+![image](https://github.com/user-attachments/assets/d8266ff5-5c98-40e9-a478-8bff302534c8)
+
+A consulta acima retorna livros que foram publicados em ou após 2 de novembro de 2021 .
+
+![image](https://github.com/user-attachments/assets/f02c7963-ca79-4c14-82fc-4a92d32db38d)
+
+* `SELECT *`: Seleciona todas as colunas da tabela.
+* `FROM hacking_tools`: Especifica a tabela hacking_tools.
+* `WHERE category = 'Multi-Tool'`: Filtra os resultados para incluir apenas os registros cuja categoria seja "Multi-Tool".
+* `AND description LIKE '%pentesters%geeks%'`: Filtra a descrição para encontrar palavras-chave que mencionem "pentesters" e "geeks".
+
+`SELECT * FROM hacking_tools  WHERE category = 'Multi-Tool' AND description LIKE '%pentesters%geeks%';`
+![image](https://github.com/user-attachments/assets/a53acac5-309c-42c6-9d26-8ecd3747cd31)
+
+----------------------------------------------
+![image](https://github.com/user-attachments/assets/13f90e2c-6180-48bc-9985-2a5dc898944d)
+* `SELECT category`: Seleciona a coluna category que contém as categorias das ferramentas.
+* `FROM hacking_tools`: Especifica a tabela hacking_tools da qual os dados serão recuperados.
+* `WHERE amount >= 300`: Filtra as ferramentas cuja quantidade (amount) seja maior ou igual a 300
+![image](https://github.com/user-attachments/assets/8213232e-a995-4095-8b0a-338835f577b9)
+--------------------------------------------------
+
+![image](https://github.com/user-attachments/assets/549b3969-0cc4-46ce-847f-8d514251289b)
+* ` SELECT name`: Seleciona a coluna name, que contém o nome da ferramenta.
+* `FROM hacking_tools`: Especifica a tabela hacking_tools da qual os dados serão recuperados.
+* `WHERE category = 'Network intelligence':` Filtra para incluir apenas os registros da categoria "Inteligência de rede".
+* `AND amount < 100:` Filtra para encontrar ferramentas cujo valor (amount) seja menor que 100.
+![image](https://github.com/user-attachments/assets/10f7b9be-0726-48ec-8b94-df4a2337e79c)
+
+
 
