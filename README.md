@@ -1,7 +1,7 @@
 # Fundamentos-de-SQL-THM
 ![image](https://github.com/user-attachments/assets/3ff6a2cf-7451-422e-85b6-1bd6b02b97c1)
 
-
+<img src="https://tryhackme-badges.s3.amazonaws.com/VivianeFerro.png" alt="Your Image Badge" />
 ## Tarefa 1
 
 ## Introdução
